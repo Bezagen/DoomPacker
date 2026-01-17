@@ -11,7 +11,10 @@ namespace DoomLauncher.Model
     public class ModPack : INotifyPropertyChanged
     {
         private string title;
-        private string strings;
+        private string doomPortPath;
+        private List<string> modsPaths;
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName]string prop = "")
