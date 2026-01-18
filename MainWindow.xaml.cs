@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using DoomPacker.ViewModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -11,14 +12,13 @@ using System.Windows.Shapes;
 
 namespace DoomPacker
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : HandyControl.Controls.Window
     {
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new MainWindowViewModel();
         }
     }
 }
