@@ -25,6 +25,15 @@ namespace DoomPacker.ViewModel
             }
         }
 
+        public MainWindowViewModel()
+        {
+            ModPacks = new ObservableCollection<ModPackModel>
+            {
+                new ModPackModel { Image = "Images\\Icons\\ForPacks\\DefaultIcon.png", Title = "ModPack 1"},
+                new ModPackModel { Image = "Images\\Icons\\ForPacks\\DefaultIcon.png", Title = "ModPack 2"}
+            };
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName]string prop = "")
         {

@@ -41,11 +41,14 @@
             <MenuItem Header="Walpaper"/>
         </Menu>
 
-        <ItemsControl
+        <ListBox
             ItemsSource="{Binding ModPacks}"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
-            Margin="0,34,144,24">
+            Margin="0,34,144,24"
+            Background="{StaticResource SecondaryRegionBrush}"
+            Style="{DynamicResource ListBoxTransparentStyle}"
+            SelectedItem="{Binding SelectedModPack}">
             <ItemsControl.Template>
                 <ControlTemplate>
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -63,20 +66,29 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <hc:Card
-                        MaxWidth="64"
                         BorderThickness="0"
-                        Margin="0">
-                        <Image />
+                        Margin="2"
+                        Effect="{DynamicResource EffectShadow2}"
+                        Background="Transparent">
+                        <Image 
+                            Width="64"
+                            Height="64"
+                            Source="{Binding Image}"/>
                         <hc:Card.Footer>
                             <StackPanel>
-                                
+                                <TextBlock 
+                                    TextWrapping="NoWrap"
+                                    Style="{DynamicResource TextBlockBaseStyle}"
+                                    FontSize="14"
+                                    HorizontalAlignment="Center"
+                                    Text="{Binding Title}"/>
                             </StackPanel>
                         </hc:Card.Footer>
                     </hc:Card>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
 
-        </ItemsControl>
+        </ListBox>
 
         <Border
             HorizontalAlignment="Right"
@@ -89,7 +101,8 @@
             <StackPanel 
                 Orientation="Vertical"
                 HorizontalAlignment="Stretch"
-                VerticalAlignment="Top">
+                VerticalAlignment="Top"
+                DataContext="{Binding SelectedModPack}">
                 <Border
                     Height="66"
                     Width="66"
@@ -97,10 +110,10 @@
                     BorderBrush="{DynamicResource BorderBrush}"
                     BorderThickness="2"
                     Background="{DynamicResource SecondaryRegionBrush}">
-                    <Image/>
+                    <Image Source="{Binding Image}"/>
                 </Border>
                 <TextBlock 
-                    Text="Name"
+                    Text="{Binding Title}"
                     Foreground="{DynamicResource PrimaryTextBrush}"
                     FontSize="16"
                     FontWeight="DemiBold"
