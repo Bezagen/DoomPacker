@@ -17,7 +17,6 @@ namespace DoomPacker
         public MainWindow()
         {
             InitializeComponent();
-
             DataContext = new MainWindowViewModel();
         }
     }

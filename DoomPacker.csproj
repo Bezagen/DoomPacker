@@ -19,8 +19,7 @@
   <ItemGroup>
     <Folder Include="Images\Backgrounds\" />
     <Folder Include="Images\Icons\Buttons\" />
-    <Folder Include="View\" />
-    <Folder Include="Backend\" />
+    <Folder Include="View\Pages\" />
   </ItemGroup>
 
   <ItemGroup>
