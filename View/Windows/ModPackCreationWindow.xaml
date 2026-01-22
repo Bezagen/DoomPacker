@@ -6,12 +6,118 @@
         xmlns:local="clr-namespace:DoomPacker.View.Windows"
         xmlns:hc="https://handyorg.github.io/handycontrol"
         mc:Ignorable="d"
-        Title="ModPackCreationWindow" 
         Height="700" Width="600"
         WindowStyle="ToolWindow"
         WindowStartupLocation="CenterOwner"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        Background="{StaticResource RegionBrush}"
+        FontSize="16"
+        Title="Create new Modpack">
     <Grid>
-        
+        <Border
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            Background="{StaticResource RegionBrush}"
+            BorderBrush="{StaticResource BorderBrush}"
+            BorderThickness="0,0,0,2">
+            <StackPanel
+                Orientation="Horizontal">
+                <hc:ImageSelector
+                    Height="100"
+                    Width="100"
+                    Margin="10"/>
+                <StackPanel
+                    Margin="10"
+                    Width="455">
+                    <TextBlock 
+                        Text="Title"
+                        Foreground="White"/>
+                    <TextBox />
+                    <TextBlock
+                        Text="Port"
+                        Foreground="White"/>
+                    <Grid>
+                        <TextBox 
+                            Margin="0,0,34,0"/>
+                        <Button 
+                            HorizontalAlignment="Right"
+                            MinWidth="33"
+                            Content="..."
+                            FontWeight="Bold"
+                            FontSize="16"/>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <StackPanel
+            Margin="0, 130, 0, 0"
+            VerticalAlignment="Top"
+            Orientation="Vertical">
+            <TextBlock 
+                Text="Mods Folder"
+                Foreground="White"
+                Margin="10,10,0,0"/>
+            <Grid>
+                <TextBox 
+                Margin="10,10,44,10"/>
+                <Button 
+                HorizontalAlignment="Right"
+                MinWidth="34"
+                Margin="0,0,10,0"
+                Content="..."
+                FontSize="16"
+                FontWeight="Bold"/>
+            </Grid>
+        </StackPanel>
+        <Border
+            Background="{StaticResource SecondaryRegionBrush}"
+            Margin="24, 220, 24, 44"
+            CornerRadius="16">
+            <Grid
+                Margin="16">
+                <TextBlock
+                    Text="Mods folder"
+                    Foreground="White"
+                    VerticalAlignment="Top"
+                    Margin="80,0,0,0"/>
+                <TextBlock
+                    Text="Mods in Modpack"
+                    Foreground="White"
+                    VerticalAlignment="Top"
+                    Margin="335,0,0,0"/>
+                <Border
+                    Margin="0,24,0,0"
+                    HorizontalAlignment="Left"
+                    Width="250"
+                    Background="{StaticResource RegionBrush}"
+                    CornerRadius="8"
+                    BorderBrush="{StaticResource SecondaryBorderBrush}"
+                    BorderThickness="2">
+                    <ListBox
+                        Margin="4"
+                        BorderThickness="0"/>
+                </Border>
+                <Border
+                    Margin="0,24,0,0"
+                    HorizontalAlignment="Right"
+                    Width="250"
+                    Background="{StaticResource RegionBrush}"
+                    CornerRadius="8"
+                    BorderBrush="{StaticResource SecondaryBorderBrush}"
+                    BorderThickness="2">
+                    <ListBox
+                        Margin="4"
+                        BorderThickness="0"/>
+                </Border>
+            </Grid>
+        </Border>
+        <Button
+            Style="{StaticResource ButtonPrimary}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Margin="4"
+            Content="Save"
+            FontSize="16"
+            Height="36"/>
     </Grid>
 </hc:Window>

@@ -35,7 +35,7 @@
             Height="34"
             BorderBrush="{DynamicResource BorderBrush}"
             BorderThickness="0,0,0,2">
-            <MenuItem Icon="" Header="Add pack"/>
+            <MenuItem Icon="" Header="Add pack" Click="MenuItem_Click"/>
             <MenuItem Icon="" Header="Preferences"/>
             <MenuItem Icon="" Header="Help"/>
             <MenuItem Header="Walpaper"/>

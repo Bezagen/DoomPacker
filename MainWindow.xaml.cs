@@ -1,4 +1,5 @@
-﻿using DoomPacker.ViewModel;
+﻿using DoomPacker.View.Windows;
+using DoomPacker.ViewModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,6 +19,12 @@ namespace DoomPacker
         {
             InitializeComponent();
             DataContext = new MainWindowViewModel();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            ModPackCreationWindow creationWindow = new ModPackCreationWindow();
+            creationWindow.Show();
         }
     }
 }
