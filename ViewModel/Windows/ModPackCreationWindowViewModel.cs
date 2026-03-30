@@ -11,7 +11,7 @@ namespace DoomPacker.ViewModel.Windows
 {
     public class ModPackCreationWindowViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<string> ModsInFolder { get; set; };
+        public ObservableCollection<string> ModsInFolder { get; set; }
 
         public ModPackCreationWindowViewModel()
         {

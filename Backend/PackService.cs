@@ -10,7 +10,7 @@ namespace DoomPacker.Backend
 {
     public class PackService
     {
-        public void CreateModPack(string title, string image, string port, List<ModPackModel> modsPaths) 
+        public void CreateModPack(string title, string image, string port, List<ModPackInfo> modsPaths) 
         {
             XDocument xModPack = new XDocument();
             XElement pack = new XElement("pack");

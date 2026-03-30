@@ -12,10 +12,10 @@ namespace DoomPacker.ViewModel
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
-        private ModPackModel selectedModPack;
-        public ObservableCollection<ModPackModel> ModPacks { get; set; }
+        private Object selectedModPack;
+        public ObservableCollection<Object> Collection { get; set; }
 
-        public ModPackModel SelectedModPack
+        public Object SelectedModPack
         {
             get { return selectedModPack; }
             set
@@ -27,11 +27,10 @@ namespace DoomPacker.ViewModel
 
         public MainWindowViewModel()
         {
-            ModPacks = new ObservableCollection<ModPackModel>
-            {
-                new ModPackModel { Image = "Images\\Icons\\ForPacks\\DefaultIcon.png", Title = "ModPack 1"},
-                new ModPackModel { Image = "Images\\Icons\\ForPacks\\DefaultIcon.png", Title = "ModPack 2"}
-            };
+            Collection = [
+                new ModPackInfo { Image = "Images\\Icons\\ForPacks\\DefaultIcon.png", Title = "ModPack 1", Version = "0,1", Path = "Null" },
+                new LoadOrderList {Title = "LoadOrderList", Path = "Null"}
+                ];
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

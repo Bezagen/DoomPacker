@@ -23,7 +23,7 @@ namespace DoomPacker
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            ModPackCreationWindow creationWindow = new ModPackCreationWindow();
+            ModPackCreationWindow creationWindow = new();
             creationWindow.Show();
         }
     }

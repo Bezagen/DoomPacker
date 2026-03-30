@@ -35,14 +35,37 @@
             Height="34"
             BorderBrush="{DynamicResource BorderBrush}"
             BorderThickness="0,0,0,2">
-            <MenuItem Icon="" Header="Add pack" Click="MenuItem_Click"/>
+            <MenuItem 
+                Icon=""
+                Header="Menu">
+                <MenuItem
+                    Header="New">
+                    <MenuItem 
+                    Header="New Pack"
+                    Click="MenuItem_Click"/>
+                    <MenuItem
+                    Header="New list"/>
+                </MenuItem>
+
+                <MenuItem
+                    Header="Import">
+                    <MenuItem
+                    Header="Import pack"/>
+                    <MenuItem
+                    Header="Import list"/>
+                </MenuItem>
+
+                <Separator/>
+                <MenuItem
+                    Header="Mods list"/>
+            </MenuItem>
             <MenuItem Icon="" Header="Preferences"/>
             <MenuItem Icon="" Header="Help"/>
             <MenuItem Header="Walpaper"/>
         </Menu>
 
         <ListBox
-            ItemsSource="{Binding ModPacks}"
+            ItemsSource="{Binding Collection}"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Margin="0,34,144,24"

@@ -9,12 +9,12 @@ using System.Windows.Controls;
 
 namespace DoomPacker.Model
 {
-    public class ModPackModel : INotifyPropertyChanged
+    public class ModPackInfo : INotifyPropertyChanged
     {
         private string? image;
         private string title;
-        private string? doomPortPath;
-        private List<string>? modsPaths;
+        private string version;
+        private string path;
 
         public string Image
         {
@@ -36,25 +36,26 @@ namespace DoomPacker.Model
             }
         }
 
-        public string DoomPortPath
+        public string Version
         {
-            get { return doomPortPath; }
+            get { return version; }
             set
             {
-                doomPortPath = value;
-                OnPropertyChanged("DoomPortPath");
+                version = value;
+                OnPropertyChanged("Version");
             }
         }
 
-        public List<string> ModsPaths
+        public string Path
         {
-            get { return modsPaths; }
-            set 
-            { 
-                modsPaths = value;
-                OnPropertyChanged("ModsPaths");
+            get { return path; }
+            set
+            {
+                path = value;
+                OnPropertyChanged("Path");
             }
         }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName]string prop = "")
