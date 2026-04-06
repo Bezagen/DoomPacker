@@ -12,7 +12,7 @@ namespace DoomPacker.Model
     {
         private string title;
         private string path;
-        private string image = "Images\\Icons\\ForPacks\\DefaultIcon.png";
+        private string image;// = Settings.Default.DefaultFileIcon;
 
         public string Title
         {

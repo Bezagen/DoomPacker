@@ -28,7 +28,7 @@ namespace DoomPacker.ViewModel
         public MainWindowViewModel()
         {
             Collection = [
-                new ModPackInfo { Image = "Images\\Icons\\ForPacks\\DefaultIcon.png", Title = "ModPack 1", Version = "0,1", Path = "Null" },
+                new ModPackInfo { Title = "ModPack 1", Version = "0,1", Path = "Null" },
                 new LoadOrderList {Title = "LoadOrderList", Path = "Null"}
                 ];
         }
