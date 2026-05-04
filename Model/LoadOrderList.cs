@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using DoomPacker;
 using System.Threading.Tasks;
 
 namespace DoomPacker.Model
@@ -12,7 +13,7 @@ namespace DoomPacker.Model
     {
         private string title;
         private string path;
-        private string image;// = Settings.Default.DefaultFileIcon;
+        private string image = App.AppSettings.PackIconPath;
 
         public string Title
         {

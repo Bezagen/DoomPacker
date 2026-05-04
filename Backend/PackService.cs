@@ -13,26 +13,6 @@ namespace DoomPacker.Backend
         public void CreateModPack(ModPackContent modPackContent) 
         {
 
-
-
-            //XDocument xModPack = new XDocument();
-            //XElement pack = new XElement("pack");
-            //XAttribute packAttr = new XAttribute("title", title);
-            //XElement packImage = new XElement("image", image);
-            //XElement packPort = new XElement("port", port);
-            
-            //pack.Add(packAttr);
-            //pack.Add(packImage);
-            //pack.Add(packPort);
-
-            //for (int i = 0; i < modsPaths.Count; i++)
-            //{
-            //    XElement packMod = new XElement("mod", modsPaths[i]);
-            //    pack.Add(packMod);
-            //}
-
-            //xModPack.Add(pack);
-            //xModPack.Save($"{title}.xml");
         }
     }
 }

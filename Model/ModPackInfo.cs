@@ -11,7 +11,7 @@ namespace DoomPacker.Model
 {
     public class ModPackInfo : INotifyPropertyChanged
     {
-        private string image;// = Settings.Default.DefaultFileIcon;
+        private string image = App.AppSettings.PackIconPath;
         private string title;
         private string version;
         private string path;

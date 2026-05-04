@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DoomPacker.View.Windows"
         xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Height="700" Width="600"
         WindowStyle="ToolWindow"
@@ -23,52 +24,27 @@
             <StackPanel
                 Orientation="Horizontal">
                 <hc:ImageSelector
-                    Height="100"
-                    Width="100"
+                    Height="164"
+                    Width="164"
                     Margin="10"/>
                 <StackPanel
                     Margin="10"
-                    Width="455">
+                    Width="390">
                     <TextBlock 
                         Text="Title"
                         Foreground="White"/>
                     <TextBox />
                     <TextBlock
-                        Text="Port"
+                        Text="Description"
                         Foreground="White"/>
-                    <Grid>
-                        <TextBox 
-                            Margin="0,0,34,0"/>
-                        <Button 
-                            HorizontalAlignment="Right"
-                            MinWidth="33"
-                            Content="..."
-                            FontWeight="Bold"
-                            FontSize="16"/>
-                    </Grid>
+                    <RichTextBox 
+                        Height="90"
+                        VerticalScrollBarVisibility="Visible"
+                        >
+                    </RichTextBox>
                 </StackPanel>
             </StackPanel>
         </Border>
-        <StackPanel
-            Margin="0, 130, 0, 0"
-            VerticalAlignment="Top"
-            Orientation="Vertical">
-            <TextBlock 
-                Text="Mods Folder"
-                Foreground="White"
-                Margin="10,10,0,0"/>
-            <Grid>
-                <TextBox 
-                Margin="10,10,44,10"/>
-                <Button 
-                HorizontalAlignment="Right"
-                MinWidth="34"
-                Margin="0,0,10,0"
-                Content="..."
-                FontSize="16"
-                FontWeight="Bold"/>
-            </Grid>
-        </StackPanel>
         <Border
             Background="{StaticResource SecondaryRegionBrush}"
             Margin="24, 220, 24, 44"
@@ -95,7 +71,17 @@
                     BorderThickness="2">
                     <ListBox
                         Margin="4"
-                        BorderThickness="0"/>
+                        BorderThickness="0"
+                        ItemsSource="{Binding ModsInFolder}"
+                        SelectedItem="{Binding SelectedItemFolder, Mode=TwoWay}">
+                        <b:Interaction.Triggers>
+                            <b:EventTrigger EventName="MouseDoubleClick">
+                                <b:InvokeCommandAction
+                                    Command="{Binding FolderDoubleClickCommand}"
+                                    CommandParameter="{Binding SelectedItemFolder}"/>
+                            </b:EventTrigger>
+                        </b:Interaction.Triggers>
+                    </ListBox>
                 </Border>
                 <Border
                     Margin="0,24,0,0"
@@ -107,7 +93,17 @@
                     BorderThickness="2">
                     <ListBox
                         Margin="4"
-                        BorderThickness="0"/>
+                        BorderThickness="0"
+                        ItemsSource="{Binding ModsInModPack}"
+                        SelectedItem="{Binding SelectedItemPack, Mode=TwoWay}">
+                        <b:Interaction.Triggers>
+                            <b:EventTrigger EventName="MouseDoubleClick">
+                                <b:InvokeCommandAction
+                                    Command="{Binding PackDoubldeClickCommand}"
+                                    CommandParameter="{Binding SelectedItemPack}"/>         
+                            </b:EventTrigger>
+                        </b:Interaction.Triggers>
+                    </ListBox>
                 </Border>
             </Grid>
         </Border>

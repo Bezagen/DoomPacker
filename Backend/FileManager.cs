@@ -9,11 +9,7 @@ namespace DoomPacker.Backend
 {
     public class FileManager
     {
-        private string modsFolder;
-        public FileManager(string ModsFolder) 
-        {
-            modsFolder = ModsFolder;
-        }
+        private string modsFolder = App.AppSettings.ModsFolder;
 
         public List<string> FindModsInDirectory()
         {
@@ -28,7 +24,7 @@ namespace DoomPacker.Backend
                 foreach ( FileInfo mod in mods )
                 {
                     if (mod.Name.EndsWith(".pk3") || mod.Name.EndsWith(".wad"))
-                        modsList.Add(mod.FullName);
+                        modsList.Add(mod.Name);
                 }
             }
 
